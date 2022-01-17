@@ -22,7 +22,7 @@ public class MainApp {
       userService.add(user1);
 
       User user2 = new User("User2", "Lastname2", "user2@mail.ru");
-      Car car2 = new Car("ferrari", 18);
+      Car car2 = new Car("takSebeMashina", 1928);
       user2.setCar(car2);
 //      car.setUser(user2);
       userService.add(user2);
