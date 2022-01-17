@@ -8,7 +8,7 @@ public class Car {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "series")
@@ -21,9 +21,13 @@ public class Car {
 
     }
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+
+    @OneToOne (mappedBy = "car")
     private User user;
+
+    public User getUser() {
+        return user;
+    }
 
 
     public Car(String model, int series) {

@@ -21,7 +21,7 @@ public class MainApp {
       user1.setCar(car);
       userService.add(user1);
 
-      User user2 = new User("User1", "Lastname1", "user1@mail.ru");
+      User user2 = new User("User2", "Lastname2", "user2@mail.ru");
       Car car2 = new Car("ferrari", 18);
       user2.setCar(car2);
 //      car.setUser(user2);
@@ -29,7 +29,7 @@ public class MainApp {
 
 
 
-      List<User> users = userService.findByCar("ferrari", 18);
+      List<User> users = userService.findByCar("carModel1", 15);
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());
