@@ -1,15 +1,25 @@
 package hiber.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "car")
 public class Car {
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "series")
@@ -17,6 +27,16 @@ public class Car {
 
     @Column(name = "model")
     private String model;
+
+
+
+    public Car() {
+
+    }
+    public Car(int series, String model) {
+        this.series = series;
+        this.model = model;
+    }
 
     public int getSeries() {
         return series;
@@ -34,7 +54,7 @@ public class Car {
         this.model = model;
     }
 
-     public Long getId() {
+    public Long getId() {
         return id;
     }
 
