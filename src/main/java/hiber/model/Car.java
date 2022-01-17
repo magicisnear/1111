@@ -8,7 +8,6 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "car_id", nullable = false, insertable = true, updatable = true)
     private Long id;
 
     @Column(name = "series")
@@ -17,21 +16,15 @@ public class Car {
     @Column(name = "model")
     private String model;
 
-    @OneToOne (optional=false, mappedBy="car")
-    @JoinColumn(name = "user_car_id")
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Car() {
 
     }
+
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private User user;
+
+
     public Car(String model, int series) {
         this.series = series;
         this.model = model;
