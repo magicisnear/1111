@@ -21,8 +21,7 @@ public class Car {
 
     }
 
-
-    @OneToOne (mappedBy = "car")
+    @OneToOne
     private User user;
 
     public User getUser() {
