@@ -30,7 +30,7 @@ public class User {
    }
 
    public void setCar(Car car) {
-      car.setUser(this);
+      this.car = car;
    }
 
    public User() {}
