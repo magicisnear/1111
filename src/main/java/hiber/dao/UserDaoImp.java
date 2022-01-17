@@ -28,8 +28,8 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public List<User> findByCar(String model, int series) {
-      TypedQuery<User> find = sessionFactory.getCurrentSession().createQuery("select u from User u, Car c " +
-              "where c.model = :c_model and c.series = :c_series", User.class);
+      TypedQuery<User> find = sessionFactory.getCurrentSession().createQuery("select u from User u, Car c" +
+              " where c.model = :c_model and c.series = :c_series", User.class);
       find.setParameter("c_model", model);
       find.setParameter("c_series", series);
       return find.getResultList();
