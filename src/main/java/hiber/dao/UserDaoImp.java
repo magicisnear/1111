@@ -34,7 +34,4 @@ public class UserDaoImp implements UserDao {
       find.setParameter("c_series", series);
       return find.getResultList();
    }
-
-
-
 }
