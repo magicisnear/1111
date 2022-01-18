@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class User {
 
    @Id
-   @Column(name = "id")
    private Long id;
 
    @Column(name = "name")
