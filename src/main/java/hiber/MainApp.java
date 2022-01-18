@@ -24,13 +24,17 @@ public class MainApp {
       User user2 = new User("User2", "Lastname2", "user2@mail.ru");
       Car car2 = new Car("takSebeMashina", 1928);
       user2.setCar(car2);
-//      car.setUser(user2);
       userService.add(user2);
 
       User user3 = new User("User2", "Lastname2", "user2@mail.ru");
       userService.add(user3);
 
-      List<User> users = userService.findByCar("carModel1", 15);
+      User user4 = new User("User3", "Lastname3", "user2@mail.ru");
+      Car car4 = new Car("takSebeMashina", 1928);
+      user4.setCar(car4);
+      userService.add(user4);
+
+      List<User> users = userService.findByCar("takSebeMashina", 1928);
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());

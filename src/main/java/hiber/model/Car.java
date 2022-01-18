@@ -8,7 +8,7 @@ public class Car {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "series")
@@ -21,7 +21,7 @@ public class Car {
 
     }
 
-    @OneToOne(mappedBy = "car")
+    @OneToOne
     private User user;
 
     public User getUser() {

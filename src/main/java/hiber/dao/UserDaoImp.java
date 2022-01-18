@@ -28,7 +28,7 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public List<User> findByCar(String model, int series) {
-      TypedQuery<User> find = sessionFactory.getCurrentSession().createQuery("select u from User u, Car c" +
+      TypedQuery<User> find = sessionFactory.getCurrentSession().createQuery("select u from User u inner join Car c on u.car.id = c.id" +
               " where c.model = :c_model and c.series = :c_series", User.class);
       find.setParameter("c_model", model);
       find.setParameter("c_series", series);
